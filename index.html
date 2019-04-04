@@ -27,42 +27,37 @@
         // hay casos en que podrías necesitar variables globales
                 var data;
         function preload() {
-            data = loadJSON('https://api.myjson.com/bins/8nrtk');
+            data = loadJSON('https://api.myjson.com/bins/gkfi8');
         }
-        }
+    
         
         function setup() {
-            createCanvas(windowWidth,windowHeight).parent("aqui");
+            createCanvas(windowWidth,windowHeight);
             background('125');
             print(data);
             noLoop();
             noStroke();
             textAlign(CENTER);
              for(var n = 0; n < 6; n++){
-                if(data[n]. < 10){
-                    fill('yellow');
-                } else {
-                    fill('blue');
-                }
-                ellipse(
-                    width/7*(n+1),
-                    data[n].ranking+300,(data[n].ranking)-160,(data[n].ranking)-160);                
+             
+                
+                circle(width/7*(n),height/3,20);                
                 fill(251, 127, 4);
                 textSize(16);
                 text(
-                    data[n].album,width/7*(n+1),(height/2));
+                    data[n].peli,width/7*(n+1),(height/2));
                 fill(251, 4, 199);
-                text('#'+
-                data[n].ranking,width/7*(n+1),(height-465));
+                text(
+                data[n].taquilla,width/7*(n+1),(height-465));
                 
         textSize(45);
-            fill('red');    
-        text('personas' + 'en el espacio', width/2,100)
+            fill(111, 115, 225);    
+        text('"Peliculas mas taquilleras de la historia"', width/2,100)
             }
-
         }
         
         function draw() {
+            
             var total = data.length;
             for (var n = 0; n > total; n++){
                 ellipse((width/total)*(n+1), height/2, 10, 10);
