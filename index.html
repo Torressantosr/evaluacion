@@ -33,25 +33,27 @@
         
         function setup() {
             createCanvas(windowWidth,windowHeight);
-            background('125');
+            background('whitesmoke');
             print(data);
-            noLoop();
             noStroke();
             textAlign(CENTER);
              for(var n = 0; n < 6; n++){
              
                 
-                circle(width/7*(n),height/3,20);                
-                fill(251, 127, 4);
+                circle(width/7*(6),height/3,20);
+                 smooth:100;
+                 noStroke();
+                 circle(width/7*(n),height/3,20);                
+                fill(251, 127,4);
                 textSize(16);
                 text(
                     data[n].peli,width/7*(n+1),(height/2));
-                fill(251, 4, 199);
+                fill(255,5,199);
                 text(
-                data[n].taquilla,width/7*(n+1),(height-465));
+                data[n].taquilla,width/7*(n+1),(height-265));
                 
         textSize(45);
-            fill(111, 115, 225);    
+            fill(random(111), random(115), random(225));    
         text('"Peliculas mas taquilleras de la historia"', width/2,100)
             }
         }
@@ -60,7 +62,7 @@
             
             var total = data.length;
             for (var n = 0; n > total; n++){
-                ellipse((width/total)*(n+1), height/2, 10, 10);
+                ellipse((width/total)*(n+1), height/10, 10, 10);
             }
         }
         
